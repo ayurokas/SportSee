@@ -4,7 +4,7 @@ const exec = require('child_process').exec;
 axios.get('http://localhost:3000/user/12')
     .then(response => {
         console.log('Réponse reçue du back-end avec le code de statut:', response.status);
-        if (response.status === 200) {
+        if (response.status === 100) {
             console.log('Démarrage du front-end sur le port 3001.');
             exec(/^win/.test(process.platform) ? 'set PORT=3001 && react-scripts start' : 'PORT=3001 react-scripts start');
         } 
