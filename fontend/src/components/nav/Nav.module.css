@@ -1,0 +1,51 @@
+@import './../../styles/colors.css';
+@import './../../styles/fonts.css';
+
+.nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--primary-color);
+    height: 91px;
+}
+
+.nav a{
+    text-decoration: none;
+}
+
+.nav_logo{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding-left: 28px;
+}
+
+.nav_logo_pic{
+    width: 57px;
+    height: 57px;
+}
+
+.nav_logo h1{
+    font-size: 1.5rem;
+    font-weight: var(--regular);
+    color: var(--quarternary-color);
+}
+
+.nav_menu{
+    width: 80%;
+}
+
+.nav_menu_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nav_menu_links li a, .nav_nav_links li a:hover, .nav_menu_links li a:active, .nav_menu_links li a:visited{
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: var(--medium);
+}

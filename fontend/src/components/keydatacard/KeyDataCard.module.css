@@ -1,0 +1,55 @@
+@import './../../styles/colors.css';
+@import './../../styles/fonts.css';
+
+.keydata_card{
+    background-color: #FBFBFB;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;    
+    align-items: center;
+    height: 12.109375vh;
+    padding-top: 3.125vh;
+    padding-bottom: 3.125vh;
+    padding-left: 2.222vw;
+    gap: 1.667vw;
+}
+
+.keydata_card_icon{
+    height: 50px;
+    width: 50px;
+    border-radius: 6px;
+}
+
+.calorie_box{
+    background: rgba(255, 0, 0, 0.066);
+}
+
+.protein_box{
+    background: rgba(74, 184, 255, 0.066);
+}
+
+.carbohydrate_box{
+    background: rgba(249, 206, 35, 0.066);
+}
+
+.lipid_box{
+    background: rgba(253, 81, 129, 0.066);
+}
+
+.keydata_card_icon img{
+    height: 20px;
+    width: 15.8px;
+    margin-top: calc(50% - 10px);
+    margin-left: calc(50% - 7.9px);
+}
+
+.keydata_card_text_content strong{
+    font-size: 1.25rem;
+}
+
+.keydata_card_text_content p{
+    font-size: 0.875rem;
+    font-weight: var(--medium);
+    color: #74798C;
+}

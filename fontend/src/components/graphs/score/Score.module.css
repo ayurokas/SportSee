@@ -1,0 +1,53 @@
+@import './../../../styles/colors.css';
+@import './../../../styles/fonts.css';
+
+
+
+.score_chart{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    border-radius: 5px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+}
+
+path[name='Remaining'] {
+    display: none;
+  }
+
+.piechart_legend{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    z-index: 2;
+    width: 7.643vw;
+    text-align: center;
+    margin-left: calc(50% - 3.8vw);
+    margin-top: 10vh;
+}
+
+.piechart_legend strong {
+    font-size: 1.625rem;
+}
+
+.piechart_legend p {
+    font-size: 1rem;
+    color: #74798C;
+}
+
+.piechart_title{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    z-index: 2;
+    font-size: 0.938rem;
+    font-weight: var(--medium);
+    margin-left: 2.083vw;
+    margin-top: 2vh;
+}
+
+.piechart{
+    grid-column-start: 1;
+    grid-row-start: 1;
+}

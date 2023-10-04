@@ -1,0 +1,21 @@
+.average_session_time_chart{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    border-radius: 5px;
+    width: 18.43vw;
+    overflow: hidden;
+}
+
+.recharts-cartesian-axis-tick-line, .recharts-cartesian-axis-line {
+  display: none;
+}
+
+.recharts-legend-icon {
+    display: none;
+  }
+
+.legend{
+    text-align: left;
+    margin-left: 2.429vw;
+}

@@ -1,0 +1,52 @@
+.form{
+    width: 300px; 
+    height: auto; 
+    background-color: rgba(255, 255, 255, 0.829);
+    color: #000000;
+    padding: 40px;
+    border-radius: 10px;
+    border: 2px solid #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+    align-items: center;
+    border-color: red;
+}
+
+.form_radiobuttons input [type='radio'] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: red;
+}
+
+.form_radiobuttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.form_submitbutton{
+    background-color: var(--tertiary-color);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.3s;
+}
+
+.form_submitbutton:hover {
+    cursor: pointer;
+    background-color: var(--secondary-color);
+}
+
+.userImage {
+    width: 150px;
+    height: auto;
+}
+
+.userCards {
+    margin-top: 25px ;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}

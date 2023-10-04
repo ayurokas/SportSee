@@ -1,0 +1,32 @@
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: rgb(204, 157, 157);
+    color: #ff0000;
+}
+
+.error h1{
+    font-size: 200px;
+}
+
+.error p {
+    font-size: 35px;
+}
+
+.error a, .error a:active{
+    color: #080808;
+    text-decoration: none;
+}
+
+.error a:hover {
+    color: var(--tertiary-color);
+}
+
+.error_image {
+    width: 700px;
+    height: auto;
+}

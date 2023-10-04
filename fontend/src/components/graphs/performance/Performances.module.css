@@ -1,0 +1,8 @@
+.performances_chart{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    width: 18.43vw;
+    border-radius: 5px;
+    overflow: hidden;
+}

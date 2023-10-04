@@ -1,0 +1,70 @@
+@import './../../../styles/colors.css';
+@import './../../../styles/fonts.css';
+
+.daily_activity_chart{
+    background-color: #FBFBFB;
+    padding: 32px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.daily_activity_chart_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 32px;
+}
+
+.daily_activity_chart_header h2{
+    font-family: 'Roboto';
+    color: #20253A;
+    font-weight: var(--medium);
+    font-size: 0.938rem;
+}
+
+.daily_activity_chart_header_legend{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 52px;
+}
+
+.daily_activity_chart_header_legend p{
+    font-family: 'Roboto';
+    color: #74798C;
+    font-weight: var(--medium);
+    font-size: 0.938rem;
+}
+
+.weight::before{
+    margin-right: 10px;
+    display: inline-block;
+    content:'\A';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #282D30;
+}
+
+.calories::before{
+    margin-right: 10px;
+    display: inline-block;
+    content:'\A';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--quarternary-color);
+}
+
+.recharts-cartesian-grid-vertical{
+    display: none;
+}
+
+.recharts-wrapper{
+    background-color: #FBFBFB;
+}
