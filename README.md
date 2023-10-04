@@ -2,7 +2,7 @@
 
 Allume backend - npm start  - http://localhost:3000/
 
-Allume frontend - nmp start - http://localhost:3001/
+Allume frontend - npm start - http://localhost:3001/
 
 -----------------------------------------------------
  
