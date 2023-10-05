@@ -3,8 +3,21 @@ import { useNavigate } from "react-router-dom";
 import maleImage from './../../assets/homme.png';
 import femaleImage from './../../assets/femme.png';
 
+
+/**
+ * Composant Form pour afficher le formulaire de connexion pour les utilisateurs.
+ */
+
 function Form() {
     const navigate = useNavigate();
+
+    
+    /**
+     * Gère la soumission du formulaire utilisateur.
+     * 
+     * @param {Event} event - L'événement de soumission du formulaire.
+     * @param {string} userId - L'ID de l'utilisateur.
+     */
 
     const handleUserSubmit = (event, userId) => {
         event.preventDefault();

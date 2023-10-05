@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 import { RadarChart, Radar, ResponsiveContainer, PolarGrid, PolarAngleAxis } from 'recharts';
 import classes from './Performances.module.css';
 
+
+/**
+ * Composant Performances pour afficher un graphique radar représentant les performances de l'utilisateur.
+ * 
+ * @param {Object[]} performances - La liste des performances à afficher.
+ */
+
 function Performances({ performances }) {
 
     let sortedPerformances = [...performances];

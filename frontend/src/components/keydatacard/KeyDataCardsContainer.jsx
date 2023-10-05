@@ -7,12 +7,14 @@ import cheeseburgerIcon from './../../assets/cheeseburger.svg';
 import classes from '../keydatacard/KeyDataCardsContainer.module.css';
 import KeyDataCard from './KeyDataCard';
 
-KeyDataCardsContainer.propTypes = {
-    calorieCount: PropTypes.number.isRequired,
-    proteinCount: PropTypes.number.isRequired,
-    carbohydrateCount: PropTypes.number.isRequired,
-    lipidCount: PropTypes.number.isRequired,
-}
+/**
+ * Composant KeyDataCardsContainer pour afficher une série de cartes avec des données clés.
+ * 
+ * @param {number} calorieCount - La quantité de calories.
+ * @param {number} proteinCount - La quantité de protéines.
+ * @param {number} carbohydrateCount - La quantité de glucides.
+ * @param {number} lipidCount - La quantité de lipides.
+ */
 
 function KeyDataCardsContainer({ calorieCount, proteinCount, carbohydrateCount, lipidCount, }) {
 
@@ -24,6 +26,13 @@ function KeyDataCardsContainer({ calorieCount, proteinCount, carbohydrateCount, 
             <KeyDataCard count={lipidCount} unit="g" type="Lipides" color="rgba(253, 81, 129, 0.066)" icon={cheeseburgerIcon} />
         </div>
     )
+}
+
+KeyDataCardsContainer.propTypes = {
+    calorieCount: PropTypes.number.isRequired,
+    proteinCount: PropTypes.number.isRequired,
+    carbohydrateCount: PropTypes.number.isRequired,
+    lipidCount: PropTypes.number.isRequired,
 }
 
 

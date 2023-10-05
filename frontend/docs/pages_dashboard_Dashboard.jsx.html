@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/dashboard/Dashboard.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/dashboard/Dashboard.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import Greetings from '../../components/greetings/Greetings';
+import DailyActivity from '../../components/graphs/dailyactivity/DailyActivity';
+import AverageSessionTime from '../../components/graphs/averagesession/AverageSessionTime';
+import Performances from '../../components/graphs/performance/Performances';
+import Score from '../../components/graphs/score/Score';
+import classes from './Dashboard.module.css';
+import KeyDataCardsContainer from '../../components/keydatacard/KeyDataCardsContainer';
+import getProfile from '../../service/userRequest';
+
+/**
+ * Composant Dashboard pour afficher les informations et les graphiques liés à l'utilisateur.
+ */
+
+function Dashboard() {
+    const [userModel, setUserModel] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    // Récupération de l'id de l'URL
+    const { id } = useParams();
+
+    // Navigation pour la redirection
+    const navigate = useNavigate();
+
+    // Titre de la page
+    const pageTitle = 'Dashboard';
+    document.title = `SportSee - ${pageTitle}`;
+
+    // Récupération du userModel
+    useEffect(() => {
+        setIsLoading(true);
+        getProfile(id)
+            .then((model) => {
+                setUserModel(model);
+                setIsLoading(false);
+            })
+            .catch((err) => {
+                console.log(err);
+                setError("Une erreur s'est produite lors de la récupération des données.");
+                setIsLoading(false);
+                navigate('/404'); // Redirection vers la page d'erreur
+            });
+    }, [id, navigate]);
+
+    return (
+        &lt;div className={classes.dashboard}>
+            {isLoading &amp;&amp; &lt;p>Chargement...&lt;/p>}
+            {error &amp;&amp; &lt;p>{error}&lt;/p>}
+            {userModel &amp;&amp; !isLoading &amp;&amp; !error &amp;&amp; (
+                &lt;>
+                    &lt;Greetings firstName={userModel.firstName} />
+                    &lt;section className={classes.dashboard_graphs}>
+                        &lt;DailyActivity sessions={userModel.dailyActivity} />
+                        &lt;AverageSessionTime sessions={userModel.sessionLength} />
+                        &lt;Performances performances={userModel.performances} />
+                        &lt;Score todayScore={userModel.score} />
+                        &lt;KeyDataCardsContainer 
+                            calorieCount={userModel.calorieCount} 
+                            proteinCount={userModel.proteinCount} 
+                            carbohydrateCount={userModel.carbohydrateCount} 
+                            lipidCount={userModel.lipidCount} 
+                        />
+                    &lt;/section>
+                &lt;/>
+            )}
+        &lt;/div>
+    )
+}
+
+export default Dashboard;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="UserModel.html">UserModel</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#AverageSessionTime">AverageSessionTime</a></li><li><a href="global.html#BaseLayout">BaseLayout</a></li><li><a href="global.html#DailyActivity">DailyActivity</a></li><li><a href="global.html#Dashboard">Dashboard</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Form">Form</a></li><li><a href="global.html#Greetings">Greetings</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#KeyDataCard">KeyDataCard</a></li><li><a href="global.html#KeyDataCardsContainer">KeyDataCardsContainer</a></li><li><a href="global.html#Nav">Nav</a></li><li><a href="global.html#Performances">Performances</a></li><li><a href="global.html#Score">Score</a></li><li><a href="global.html#SideMenu">SideMenu</a></li><li><a href="global.html#getUser">getUser</a></li><li><a href="global.html#getUserActivity">getUserActivity</a></li><li><a href="global.html#getUserAverageSessions">getUserAverageSessions</a></li><li><a href="global.html#getUserPerformance">getUserPerformance</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Oct 06 2023 01:36:41 GMT+0200 (Central European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

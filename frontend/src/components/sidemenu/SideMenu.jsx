@@ -5,6 +5,10 @@ import swimmingIcon from "./../../assets//swimming.png";
 import cyclingIcon from "./../../assets//cycling.png";
 import workoutIcon from "./../../assets//workout.png";
 
+/**
+ * Composant SideMenu pour afficher un menu latéral avec différents boutons représentant des activités sportives.
+ */
+
 function SideMenu() {
 
     const handleYogaClick = () => {

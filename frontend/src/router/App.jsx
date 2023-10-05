@@ -5,6 +5,13 @@ import BaseLayout from './BaseLayout.jsx';
 import Home from '../pages/home/Home.jsx';
 import Error from '../pages/error/Error.jsx';
 
+/**
+ * Composant App.
+ * C'est le composant racine de l'application. Il configure les routes principales et englobe toute l'application dans un routeur.
+ * 
+ * @component
+ */
+
 function App() {
 
     return (

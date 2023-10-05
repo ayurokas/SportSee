@@ -3,6 +3,10 @@ import classes from './Home.module.css'
 import Form from '../../components/form/Form';
 import logo from './../../assets/Sportsee.png';
 
+/**
+ * Composant Home pour afficher la page d'accueil.
+ */
+
 function Home() {
 
     const pageTitle = 'Home';

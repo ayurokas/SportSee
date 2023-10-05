@@ -4,17 +4,36 @@ import { AreaChart, XAxis, Tooltip, Legend, ResponsiveContainer, Area } from 're
 import classes from './AverageSessionTime.module.css';
 import { useState, useRef } from 'react';
 
+/**
+ * Composant AverageSessionTime pour afficher un graphique représentant la durée moyenne des sessions.
+ * 
+ * @param {Object[]} sessions - La liste des sessions à afficher.
+ */
+
 function AverageSessionTime({ sessions }) {
 
     const [rectangleWidth, setRectangleWidth] = useState(0);
     const [showRectangle, setShowRectangle] = useState(false);
     const containerRef = useRef(null);
 
+    /**
+     * Convertit les numéros des jours (1-7) en lettres (L-D).
+     * 
+     * @param {number} value - Le numéro du jour.
+     * @returns {string} La lettre correspondant au jour.
+     */
+
     //Fonction pour remplacer 1,2,...7 par les lettres
     const xAxisTickFormatter = (value) => {
         const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
         return days[value - 1];
     };
+
+    /**
+     * Affiche le texte de la légende pour le graphique.
+     * 
+     * @returns {React.Element} Le texte de la légende.
+     */
 
     const renderLegendText = () => {
         return <p className='legend' style={{ textAlign: 'left', marginLeft: '20px', opacity: '0.5', color: '#FFFFFF' }}>Durée moyenne des sessions</p>;

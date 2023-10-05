@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/form/Form.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/form/Form.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import classes from "../form/Form.module.css";
+import { useNavigate } from "react-router-dom";
+import maleImage from './../../assets/homme.png';
+import femaleImage from './../../assets/femme.png';
+
+
+/**
+ * Composant Form pour afficher le formulaire de connexion pour les utilisateurs.
+ */
+
+function Form() {
+    const navigate = useNavigate();
+
+    
+    /**
+     * Gère la soumission du formulaire utilisateur.
+     * 
+     * @param {Event} event - L'événement de soumission du formulaire.
+     * @param {string} userId - L'ID de l'utilisateur.
+     */
+
+    const handleUserSubmit = (event, userId) => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+        const formJson = Object.fromEntries(formData.entries());
+        if (formJson.api === 'true') {
+            localStorage.setItem("dataSrc", 'api');
+        } else if (formJson.api === 'false') {
+            localStorage.setItem("dataSrc", 'mockedData');
+        }
+        navigate(`/dashboard/${userId}/`);
+    };
+
+    return (
+        &lt;div className={classes.login}>
+            &lt;h2 className={classes.userCardsTitle}>Page connexion des utilisateurs :&lt;/h2>
+            &lt;div className={classes.userCards}>
+                &lt;form onSubmit={(e) => handleUserSubmit(e, "12")} className={classes.form}>
+                    &lt;h3>Karl Dovineau - ID: 12&lt;/h3>
+                    &lt;img src={maleImage} alt="Karl Dovineau" className={classes.userImage} />
+                    &lt;div className={classes.form_radiobuttons}>
+                        &lt;label>
+                            &lt;input type="radio" name="api" value='true' defaultChecked={true} />
+                            API
+                        &lt;/label>
+                        &lt;label>
+                            &lt;input type="radio" name="api" value='false' />
+                            Mocked Data
+                        &lt;/label>
+                    &lt;/div>
+                    &lt;button type="submit" className={classes.form_submitbutton}>Connexion&lt;/button>
+                &lt;/form>
+
+                &lt;form onSubmit={(e) => handleUserSubmit(e, "18")} className={classes.form}>
+                    &lt;h3>Cecilia Ratorez - ID: 18&lt;/h3>
+                    &lt;img src={femaleImage} alt="Cecilia Ratorez" className={classes.userImage} />
+                    &lt;div className={classes.form_radiobuttons}>
+                        &lt;label>
+                            &lt;input type="radio" name="api" value='true' defaultChecked={true} />
+                            API
+                        &lt;/label>
+                        &lt;label>
+                            &lt;input type="radio" name="api" value='false' />
+                            Mocked Data
+                        &lt;/label>
+                    &lt;/div>
+                    &lt;button type="submit" className={classes.form_submitbutton}>Connexion&lt;/button>
+                &lt;/form>
+
+            &lt;/div>
+        &lt;/div>
+    )
+}
+export default Form;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="UserModel.html">UserModel</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#AverageSessionTime">AverageSessionTime</a></li><li><a href="global.html#BaseLayout">BaseLayout</a></li><li><a href="global.html#DailyActivity">DailyActivity</a></li><li><a href="global.html#Dashboard">Dashboard</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Form">Form</a></li><li><a href="global.html#Greetings">Greetings</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#KeyDataCard">KeyDataCard</a></li><li><a href="global.html#KeyDataCardsContainer">KeyDataCardsContainer</a></li><li><a href="global.html#Nav">Nav</a></li><li><a href="global.html#Performances">Performances</a></li><li><a href="global.html#Score">Score</a></li><li><a href="global.html#SideMenu">SideMenu</a></li><li><a href="global.html#getUser">getUser</a></li><li><a href="global.html#getUserActivity">getUserActivity</a></li><li><a href="global.html#getUserAverageSessions">getUserAverageSessions</a></li><li><a href="global.html#getUserPerformance">getUserPerformance</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Oct 06 2023 01:36:41 GMT+0200 (Central European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

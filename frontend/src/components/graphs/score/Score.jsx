@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 import { PieChart, Pie, ResponsiveContainer } from 'recharts';
 import classes from './Score.module.css'
 
+/**
+ * Composant Score pour afficher un graphique en anneau représentant le score actuel de l'utilisateur.
+ * 
+ * @param {number} todayScore - Le score actuel de l'utilisateur (entre 0 et 1).
+ */
+
 function Score({todayScore}) {
 
     let scoreData = {};

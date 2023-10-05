@@ -2,6 +2,10 @@ import logo from "./../../assets/Sportsee.png";
 import classes from "../nav/Nav.module.css";
 import { NavLink } from "react-router-dom";
 
+/**
+ * Composant Nav pour afficher la barre de navigation du site.
+ */
+
 function Nav() {
     return (
         <header className={classes.nav}>

@@ -10,6 +10,10 @@ import classes from './Dashboard.module.css';
 import KeyDataCardsContainer from '../../components/keydatacard/KeyDataCardsContainer';
 import getProfile from '../../service/userRequest';
 
+/**
+ * Composant Dashboard pour afficher les informations et les graphiques liés à l'utilisateur.
+ */
+
 function Dashboard() {
     const [userModel, setUserModel] = useState(null);
     const [isLoading, setIsLoading] = useState(true);

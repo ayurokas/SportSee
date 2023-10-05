@@ -4,6 +4,12 @@ import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar, ResponsiveContaine
 import classes from './DailyActivity.module.css'
 
 
+/**
+ * Composant DailyActivity pour afficher un graphique à barres représentant l'activité quotidienne de l'utilisateur.
+ * 
+ * @param {Object[]} sessions - La liste des sessions à afficher.
+ */
+
 function DailyActivity({ sessions }) {
 
     let smallestWeight = 0;
@@ -38,6 +44,13 @@ function DailyActivity({ sessions }) {
         fontSize: '0.625rem',
         padding: '10px'
     };
+
+    /**
+     * Personnalise l'affichage de l'infobulle pour le graphique à barres.
+     * 
+     * @param {Object} data - Les données associées à l'infobulle.
+     * @returns {React.Element|null} L'infobulle personnalisée ou null si elle n'est pas active.
+     */
 
     const customTooltip = ({ active, payload }) => {
         if (active && payload) {
