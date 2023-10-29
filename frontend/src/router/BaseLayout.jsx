@@ -1,3 +1,5 @@
+// BaseLayout est une mise en page qui intègre la navigation et le menu latéral pour les pages principales.
+
 import React from 'react';
 import Nav from '../components/nav/Nav';
 import SideMenu from '../components/sidemenu/SideMenu';

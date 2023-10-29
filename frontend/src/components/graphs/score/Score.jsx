@@ -6,22 +6,22 @@ import classes from './Score.module.css'
 /**
  * Composant Score pour afficher un graphique en anneau représentant le score actuel de l'utilisateur.
  * 
- * @param {number} todayScore - Le score actuel de l'utilisateur (entre 0 et 1).
+ * @param {number} score - Le score actuel de l'utilisateur (entre 0 et 1).
  */
 
-function Score({todayScore}) {
+function Score({score}) {
 
     let scoreData = {};
     let leftToDo = {};
     let chartData = [];
-    if (todayScore) {
+    if (score) {
         scoreData = {
             "name": "Score",
-            "value": todayScore
+            "value": score
         }
         leftToDo = {
             "name": "Remaining",
-            "value": 1 - todayScore
+            "value": 1 - score
         }
         chartData = [scoreData, leftToDo];
     }
@@ -37,7 +37,7 @@ function Score({todayScore}) {
         <div className={classes.score_chart}>
             <p className={classes.piechart_title}>Score</p>
             <div className={classes.piechart_legend}>
-                <strong>{100 * todayScore + '%'}</strong>
+                <strong>{100 * score + '%'}</strong>
                 <p>de votre objectif</p>
             </div>
             <ResponsiveContainer className={classes.piechart} width='100%' height='100%'>
@@ -50,8 +50,9 @@ function Score({todayScore}) {
     );
 }
 
+// aide a valide le type de donne -> si ne correspond pas !AVERTISEMENT!
 Score.propTypes = {
-    todayScore: PropTypes.number.isRequired
+    score: PropTypes.number.isRequired
 }
 
 export default Score;

@@ -4,7 +4,7 @@ import Form from '../../components/form/Form';
 import logo from './../../assets/Sportsee.png';
 
 /**
- * Composant Home pour afficher la page d'accueil.
+ * Composant Home pour afficher la page d'accueil avec le logo SportSee et un formulaire..
  */
 
 function Home() {

@@ -1,7 +1,6 @@
 
-/**
- * Modèle pour représenter un utilisateur.
- */
+// Le modèle UserModel offre une structure pour représenter et manipuler les données d'un utilisateur.
+
 
 class UserModel {
 

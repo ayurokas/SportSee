@@ -19,3 +19,29 @@
     text-align: left;
     margin-left: 2.429vw;
 }
+
+.legendText {
+  text-align: left;
+  margin-left: 20px;
+  opacity: 0.5;
+  color: #FFFFFF;
+}
+
+.tooltip {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: none;
+  padding: 10px;
+  font-size: 0.625rem;
+  font-weight: bold;
+}
+
+.rectangle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  pointer-events: none;
+}

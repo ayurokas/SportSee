@@ -1,3 +1,6 @@
+// Ce module récupère des informations sur un utilisateur depuis une API locale ou des données mockées. 
+// Il fournit des détails tels que l'activité, les sessions moyennes et les performances via des fonctions asynchrones.
+
 import axios from 'axios';
 import UserModel from './Model/UserModel';
 

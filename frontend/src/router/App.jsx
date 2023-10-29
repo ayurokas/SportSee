@@ -1,3 +1,6 @@
+// Le composant App est le point d'entrée principal de l'application, définissant les routes et intégrant le routeur.
+
+
 import React from 'react';
 import Dashboard from '../pages/dashboard/Dashboard.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';

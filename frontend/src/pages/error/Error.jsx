@@ -1,10 +1,11 @@
+
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import classes from './Error.module.css';
 import errorImage from './../../assets/error404.svg';
 
 /**
- * Composant Error pour afficher une page d'erreur 404.
+ * Composant Error pour afficher une page d'erreur 404 avec une image d'erreur et un lien de retour à la page d'accueil..
  */
 
 function Error() {

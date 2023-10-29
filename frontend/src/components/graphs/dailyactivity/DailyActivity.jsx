@@ -37,12 +37,15 @@ function DailyActivity({ sessions }) {
 
     const weightDomain = [smallestWeight - 1, biggestWeight + 1];
 
+    // Style pour l'infobulle.
+
     const tooltipStyle = {
         backgroundColor: '#E60000',
         color: '#fff',
         border: 'none',
-        fontSize: '0.625rem',
-        padding: '10px'
+        fontSize: '0.545rem',
+        padding: '5px'
+        
     };
 
     /**
@@ -90,6 +93,9 @@ function DailyActivity({ sessions }) {
         </div>
     )
 }
+
+// Définition des propriétés du composant.
+// aide a valide le type de donne -> si ne correspond pas !AVERTISEMENT!
 
 DailyActivity.propTypes = {
     sessions: PropTypes.arrayOf(

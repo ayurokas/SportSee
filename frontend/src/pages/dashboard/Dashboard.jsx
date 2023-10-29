@@ -11,8 +11,9 @@ import KeyDataCardsContainer from '../../components/keydatacard/KeyDataCardsCont
 import getProfile from '../../service/userRequest';
 
 /**
- * Composant Dashboard pour afficher les informations et les graphiques liés à l'utilisateur.
- */
+ * Le composant Dashboard affiche le profil de l'utilisateur, incluant les salutations, divers graphiques 
+    et des informations clés. Il récupère les données de l'utilisateur en fonction de l'ID fourni dans l'URL.
+*/
 
 function Dashboard() {
     const [userModel, setUserModel] = useState(null);
@@ -56,7 +57,7 @@ function Dashboard() {
                         <DailyActivity sessions={userModel.dailyActivity} />
                         <AverageSessionTime sessions={userModel.sessionLength} />
                         <Performances performances={userModel.performances} />
-                        <Score todayScore={userModel.score} />
+                        <Score score={userModel.score} />
                         <KeyDataCardsContainer 
                             calorieCount={userModel.calorieCount} 
                             proteinCount={userModel.proteinCount} 
